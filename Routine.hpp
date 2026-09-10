@@ -183,7 +183,7 @@ public:
 
   void printSummary() {
     using funcs::print;
-    using namespace color;
+    using namespace color; // so unnecessary
 
     print(TXT_CYAN, " ----- Summary ----- ", _RESET, "\n\n");
     print("You completed ", TXT_GREEN, completed(), "/", size(), _RESET,
