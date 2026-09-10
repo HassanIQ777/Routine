@@ -261,7 +261,7 @@ inline bool hasSequence(const std::string &text, const std::string &sequence) {
 
 inline bool isNumber(const std::string &s) {
   try {
-    long double parsed = std::stold(s);
+    [[maybe_unused]] long double parsed = std::stold(s);
     parsed += 0;
   } catch (...) {
     return false;
