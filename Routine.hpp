@@ -177,6 +177,7 @@ public:
       data["last_reset_time"] = (int)ctime;
       std::ofstream out(info_json);
       out << data.dump(2);
+      printSummary();
     }
   }
 
@@ -184,8 +185,9 @@ public:
     using funcs::print;
     using namespace color;
 
-    print(" ----- Summary ----- \n\n");
-
-    print("You completed ");
+    print(TXT_CYAN, " ----- Summary ----- ", _RESET, "\n\n");
+    print("You completed ", TXT_GREEN, completed(), "/", size(), _RESET,
+          " of the routines.\n");
+    funcs::getKeyPress();
   }
 }; // end of class RoutineManager
