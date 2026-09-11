@@ -127,7 +127,7 @@ public:
       bool completed = routines[i].isCompleted();
       if (completed) {
         print(_STRIKE_THROUGH);
-        print(fg_rgb(50, 50, 50));
+        print(fg_rgb(80, 80, 80));
         print(i + 1, ". ", routines[i].getTitle());
         print(_RESET);
         print("\n");
