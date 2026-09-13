@@ -11,7 +11,7 @@ struct Files {
 
 class Globals {
 public:
-  std::string VERSION = "26.9.10";
+  std::string VERSION = "26.9.13";
   bool running = true;
   int selected = 0;
   Files files;
