@@ -170,6 +170,7 @@ public:
     bool already_reset_today = last_reset_time >= todays_3am;
 
     if (past_3am && !already_reset_today) {
+      int completed_count = completed();
       for (auto &r : routines) {
         r.setCompleted(false);
       }
@@ -177,16 +178,16 @@ public:
       data["last_reset_time"] = (int)ctime;
       std::ofstream out(info_json);
       out << data.dump(2);
-      printSummary();
+      printSummary(completed_count);
     }
   }
 
-  void printSummary() {
+  void printSummary(int completed_count) {
     using funcs::print;
     using namespace color; // so unnecessary
 
     print(TXT_CYAN, " ----- Summary ----- ", _RESET, "\n\n");
-    print("You completed ", TXT_GREEN, completed(), "/", size(), _RESET,
+    print("You completed ", TXT_GREEN, completed_count, "/", size(), _RESET,
           " of the routines.\n");
     funcs::getKeyPress();
   }
