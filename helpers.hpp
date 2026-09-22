@@ -182,7 +182,7 @@ inline void handleInput(Globals &g, std::string input, int &selected) {
   }
 
   // mark as completed
-  else if (input == "c") {
+  else if (input == "c" || input == "/") {
     if (g.routine_manager.size() == 0)
       return;
     Routine &r = g.routine_manager.getRoutineByIndex(selected);
